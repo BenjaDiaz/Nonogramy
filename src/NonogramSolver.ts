@@ -7,7 +7,6 @@ import {NonogramCell} from "./NonogramCell";
 export class NonogramSolver {
     public solve(nonogram: Nonogram): Nonogram {
         this.solveHelper(nonogram, 0, 0);
-        console.log(nonogram);
         return nonogram;
     }
 
@@ -36,7 +35,6 @@ export class NonogramSolver {
     }
 
     private isValid(nonogram: Nonogram): boolean {
-        console.log(nonogram);
         return this.areRowsValid(nonogram) && this.areColsValid(nonogram);
     }
 

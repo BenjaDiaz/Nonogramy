@@ -1,6 +1,6 @@
 {
   "name": "nonogramy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Typescript library for solving nonogram puzzles",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
