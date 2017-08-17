@@ -1,0 +1,42 @@
+{
+  "name": "nonogramy",
+  "version": "1.0.0",
+  "description": "Typescript library for solving nonogram puzzles",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "mocha --reporter spec --compilers ts:ts-node/register 'src/**/*.test.ts'",
+    "prepublish": "tsc -p ./ --outDir dist/",
+    "run": "ts-node ./src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BenjaDiaz/nonogramy.git"
+  },
+  "keywords": [
+    "nonogram",
+    "typescript",
+    "library",
+    "2017"
+  ],
+  "author": "Benjamín Díaz <benjamindiazfuica@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BenjaDiaz/nonogramy/issues"
+  },
+  "homepage": "https://github.com/BenjaDiaz/nonogramy#readme",
+  "devDependencies": {
+    "@types/chai": "^4.0.1",
+    "@types/mocha": "^2.2.41",
+    "chai": "^4.1.0",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-mocha": "^4.3.1",
+    "gulp-typescript": "^3.1.3",
+    "mocha": "^3.4.2",
+    "run-sequence": "^1.2.2",
+    "ts-node": "^3.2.0",
+    "typescript": "^2.4.1",
+    "merge2": "^1.0.2"
+  }
+}
