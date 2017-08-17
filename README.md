@@ -1,4 +1,4 @@
-# Nonogramy
+# Nonogramy [![npm version](https://badge.fury.io/js/nonogramy.svg)](https://badge.fury.io/js/nonogramy)
 
 Simple library for solving nonograms.
 
