@@ -43,6 +43,7 @@ export class NonogramSolver {
             if (rowConstraintArr.length !== 0) {
                 let rowConstraintIndex = 0;
                 let currentConsecutiveCells = 0;
+                let results = [];
                 for (let i = 0; i < nonogram.matrix[rowIndex].length; i++) {
                     let value = nonogram.matrix[rowIndex][i];
                     if (value === NonogramCell.UNKNOWN) {
@@ -55,15 +56,16 @@ export class NonogramSolver {
                         if (currentConsecutiveCells !== rowConstraintArr[rowConstraintIndex]) {
                             return false;
                         }
+                        results.push(currentConsecutiveCells);
                         currentConsecutiveCells = 0;
                         rowConstraintIndex++;
                     }
-                    if (currentConsecutiveCells > 0 &&
+                    else if (currentConsecutiveCells > 0 &&
                         (rowConstraintIndex >= rowConstraintArr.length || currentConsecutiveCells > rowConstraintArr[rowConstraintIndex])) {
                         return false;
                     }
                 }
-                return rowConstraintIndex !== 0;
+                return JSON.stringify(rowConstraintArr) === JSON.stringify(results);
             }
         });
     }
@@ -72,6 +74,7 @@ export class NonogramSolver {
         return nonogram.colConstraints.every((colConstraintArr, colIndex) => {
             let colConstraintIndex = 0;
             let currentConsecutiveCells = 0;
+            let results = [];
             for (let i = 0; i < nonogram.matrix.length; i++) {
                 let value = nonogram.matrix[i][colIndex];
                 if (value === NonogramCell.UNKNOWN) {
@@ -84,15 +87,16 @@ export class NonogramSolver {
                     if (currentConsecutiveCells !== colConstraintArr[colConstraintIndex]) {
                         return false;
                     }
+                    results.push(currentConsecutiveCells);
                     currentConsecutiveCells = 0;
                     colConstraintIndex++;
                 }
-                if (currentConsecutiveCells > 0 &&
+                else if (currentConsecutiveCells > 0 &&
                     (colConstraintIndex >= colConstraintArr.length || currentConsecutiveCells > colConstraintArr[colConstraintIndex])) {
                     return false;
                 }
             }
-            return colConstraintIndex !== 0;
+            return JSON.stringify(colConstraintArr) === JSON.stringify(results);
         });
     }
 }
